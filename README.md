@@ -45,8 +45,8 @@ An editorial, credential-first developer portfolio and verified certificate ledg
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/akashjigjeni/portfolio.git
+   cd portfolio
    ```
 
 2. **Open in browser**:
@@ -55,12 +55,9 @@ An editorial, credential-first developer portfolio and verified certificate ledg
 
 ---
 
-## 🌐 Deploying to GitHub Pages
+## 🌐 Live Website (GitHub Pages)
 
-1. Push this repository to your GitHub account.
-2. Go to **Settings** > **Pages** in your repository.
-3. Under **Branch**, select `main` (or `master`) and the `/ (root)` folder.
-4. Click **Save**. Your portfolio will be live at `https://<your-username>.github.io/<your-repo-name>/`.
+- **Live URL**: [https://akashjigjeni.github.io/portfolio/](https://akashjigjeni.github.io/portfolio/)
 
 ---
 
