@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Jigjeni — Credential Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+
+<nav>
+  <div class="nav-inner">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="monogram">AJ</div>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="icon-group">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle dark and light mode">☾</button>
+      <button class="icon-btn" id="settingsToggle" title="Edit profile" aria-label="Edit profile settings">⚙</button>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Credential Ledger · Est. 2026</div>
+    <h1 class="name" id="heroName">Akash<br>Jigjeni</h1>
+    <div class="role" id="heroRole">Aspiring <span>AI &amp; Data Systems</span> Engineer</div>
+    <div class="college" id="heroCollege">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+      <span>TE (Third Year) · NUTAN MAHARASHTRA INSTITUTE OF ENGINEERING AND TECHNOLOGY (NMIET)</span>
+    </div>
+    <p class="bio" id="heroBio">Third Year (TE) Engineering student at Nutan Maharashtra Institute of Engineering and Technology (NMIET). I build and study systems at the intersection of data, machine intelligence, and secure infrastructure — collecting hands-on credentials one course, lab, and workshop at a time.</p>
+    <div class="stat-row" id="statRow">
+      <div class="stat"><b id="statCount">6</b><span>Credentials</span></div>
+      <div class="stat"><b id="statIssuers">5</b><span>Issuers</span></div>
+      <div class="stat"><b id="statYear">2026</b><span>Latest</span></div>
+    </div>
+    <div class="hero-links" id="heroLinks"></div>
+  </header>
+
+  <section class="section" id="skills">
+    <div class="section-head">
+      <h2 class="section-title">Skills</h2>
+      <div class="section-sub">Working knowledge</div>
+    </div>
+    <div class="skills-wrap" id="skillsWrap"></div>
+  </section>
+
+  <section class="section" id="certificates">
+    <div class="section-head">
+      <h2 class="section-title">Credentials</h2>
+      <div class="section-sub" id="certCount">6 entries, verified</div>
+    </div>
+    <div class="cert-grid" id="certGrid"></div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-head">
+      <h2 class="section-title">Contact</h2>
+      <div class="section-sub">Direct channels &amp; communication</div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-type">Email Address</div>
+        <div class="contact-val" id="contactEmail">jigjeniakash@gmail.com</div>
+        <a class="contact-link" id="contactEmailLink" href="mailto:jigjeniakash@gmail.com">Send Email ↗</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-type">Mobile Number</div>
+        <div class="contact-val" id="contactPhone">+91 9090894033</div>
+        <div style="display:flex; gap:16px;">
+          <a class="contact-link" id="contactPhoneLink" href="tel:+919090894033">Call ↗</a>
+          <a class="contact-link" id="contactWaLink" href="https://wa.me/919090894033" target="_blank" rel="noopener">WhatsApp ↗</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-type">Institution &amp; Location</div>
+        <div class="contact-val" style="font-size:17px; line-height:1.4;">NMIET, Pune</div>
+        <span class="contact-link" style="border:none; color:var(--ink-soft); padding-top:0; cursor:default;">Maharashtra, India</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap footer-row">
+    <div>© <span id="year"></span> Akash Jigjeni — built as a living ledger, not a résumé.</div>
+    <div class="footer-links" id="footerLinks"></div>
+  </div>
+</footer>
+
+<button class="fab" id="openAddCert"><span style="font-size:16px;">+</span> Add Certificate</button>
+
+<!-- SETTINGS MODAL -->
+<div class="scrim" id="settingsScrim">
+  <div class="modal">
+    <h2>Profile settings</h2>
+    <div class="modal-sub">Stored privately in your browser</div>
+    <div class="field"><label>Name</label><input id="fName" type="text"></div>
+    <div class="field"><label>Role / tagline</label><input id="fRole" type="text"></div>
+    <div class="field"><label>College / Institute</label><input id="fCollege" type="text"></div>
+    <div class="field"><label>Bio</label><textarea id="fBio" rows="3"></textarea></div>
+    <div class="field-row">
+      <div class="field"><label>Email</label><input id="fEmail" type="text" placeholder="jigjeniakash@gmail.com"></div>
+      <div class="field"><label>Mobile / Phone</label><input id="fPhone" type="text" placeholder="+91 9090894033"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>GitHub URL</label><input id="fGithub" type="text" placeholder="https://github.com/..."></div>
+      <div class="field"><label>LinkedIn URL</label><input id="fLinkedin" type="text" placeholder="https://linkedin.com/in/..."></div>
+    </div>
+    <div class="field"><label>Twitter / X URL</label><input id="fTwitter" type="text" placeholder="https://x.com/..."></div>
+    <div class="field"><label>Skills (comma separated)</label><input id="fSkills" type="text"></div>
+    <div class="modal-actions">
+      <button class="btn ghost" id="resetData">Reset all data</button>
+      <button class="btn ghost" id="closeSettings">Cancel</button>
+      <button class="btn primary" id="saveSettings">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD CERTIFICATE MODAL -->
+<div class="scrim" id="certScrim">
+  <div class="modal">
+    <h2>Add certificate</h2>
+    <div class="modal-sub">Stored privately in your browser</div>
+    <div class="field">
+      <label>Certificate image</label>
+      <div class="file-drop" id="fileDrop">
+        <div id="fileDropLabel">Click to upload JPG / PNG</div>
+        <input type="file" id="fCertImage" accept="image/*" style="display:none;">
+        <img id="fileDropPreview" style="display:none;">
+      </div>
+    </div>
+    <div class="field"><label>Title</label><input id="fCertTitle" type="text" placeholder="e.g. Introduction to Cybersecurity"></div>
+    <div class="field-row">
+      <div class="field"><label>Platform / Issuer</label><input id="fCertPlatform" type="text" placeholder="e.g. Cisco Networking Academy"></div>
+      <div class="field"><label>Date</label><input id="fCertDate" type="text" placeholder="e.g. 06 Nov 2025"></div>
+    </div>
+    <div class="field-row">
+      <div class="field"><label>Credential ID</label><input id="fCertId" type="text" placeholder="optional"></div>
+      <div class="field"><label>Verification link</label><input id="fCertUrl" type="text" placeholder="https://..."></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn ghost" id="closeCert">Cancel</button>
+      <button class="btn primary" id="saveCert">Save certificate</button>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATE PREVIEW / LIGHTBOX MODAL -->
+<div class="scrim" id="previewScrim">
+  <div class="preview-modal">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px;">
+      <div>
+        <div class="cert-platform" id="prevPlatform">Platform</div>
+        <h2 style="font-family:var(--font-display); font-size:22px; margin:4px 0 2px;" id="prevTitle">Certificate Title</h2>
+        <div class="cert-date" id="prevDate">Date · ID</div>
+      </div>
+      <button class="btn ghost" id="closePreview" style="padding:6px 12px; font-size:11px;" title="Close">✕ Close</button>
+    </div>
+    <div class="preview-img-wrap" id="prevImgWrap">
+      <img id="prevImg" class="preview-img" alt="Certificate Preview">
+      <div id="prevPlaceholder" style="display:none; padding:40px; font-family:var(--font-mono); color:var(--ink-soft); text-align:center;">No certificate image uploaded</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding-top:6px;">
+      <div style="font-family:var(--font-mono); font-size:11.5px; color:var(--seal); font-weight:600;">
+        ✓ Verified Credential Ledger Entry
+      </div>
+      <div style="display:flex; gap:10px;">
+        <button class="cert-btn btn-download" id="prevDownloadBtn">Download Certificate ↓</button>
+        <a class="cert-btn btn-verify" id="prevVerifyBtn" target="_blank" rel="noopener">Verify Online ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
